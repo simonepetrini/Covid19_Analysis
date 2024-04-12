@@ -19,7 +19,20 @@ with open(covid_filepath) as c:
     
 df_covid
 ```
-![alt text](https://github.com/simonepetrini/Covid19_Analysis/blob/img/Covid1.png?raw=True)
+
+#| iso_code| continent| location| date| total_cases| new_cases| new_cases_smoothed| total_deaths| new_deaths| new_deaths_smoothed| ...| male_smokers| handwashing_facilities| hospital_beds_per_thousand| life_expectancy| life_expectancy| human_development_index| population| excess_mortality_cumulative_absolute| excess_mortality_cumulative| excess_mortality| excess_mortality_cumulative_per_million
+-|---------|---------|---------|----|------------|----------|------------------|-------------|-----------|---------------------|---|-------------|----------------------|-------------------------|----------------|----------------|------------------------|-----------|---------------------------------|-------------------------|----------------|------------------------------
+0|AFG|Asia|Afghanistan|2020-01-05|NaN|0.0|NaN|NaN|0.0|NaN|...|NaN|37.746|0.5|64.83|0.511|41128772.0|NaN|NaN|NaN|NaN
+1|AFG|Asia|Afghanistan|2020-01-06|NaN|0.0|NaN|NaN|0.0|NaN|...|NaN|37.746|0.5|64.83|0.511|41128772.0|NaN|NaN|NaN|NaN
+2|AFG|Asia|Afghanistan|2020-01-07|NaN|0.0|NaN|NaN|0.0|NaN|...|NaN|37.746|0.5|64.83|0.511|41128772.0|NaN|NaN|NaN|NaN
+3|AFG|Asia|Afghanistan|2020-01-08|NaN|0.0|NaN|NaN|0.0|NaN|...|NaN|37.746|0.5|64.83|0.511|41128772.0|NaN|NaN|NaN|NaN
+4|AFG|Asia|Afghanistan|2020-01-09|NaN|0.0|NaN|NaN|0.0|NaN|...|NaN|37.746|0.5|64.83|0.511|41128772.0|NaN|NaN|NaN|NaN
+...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...
+377002|ZWE|Africa|Zimbabwe|2024-01-31|266265.0|0.0|4.429|5737.0|0.0|0.0|...|30.7|36.791|1.7|61.49|0.571|16320539.0|NaN|NaN|NaN|NaN
+377003|ZWE|Africa|Zimbabwe|2024-02-01|266265.0|0.0|4.429|5737.0|0.0|0.0|...|30.7|36.791|1.7|61.49|0.571|16320539.0|NaN|NaN|NaN|NaN
+377004|ZWE|Africa|Zimbabwe|2024-02-02|266265.0|0.0|4.429|5737.0|0.0|0.0|...|30.7|36.791|1.7|61.49|0.571|16320539.0|NaN|NaN|NaN|NaN
+377005|ZWE|Africa|Zimbabwe|2024-02-03|266265.0|0.0|4.429|5737.0|0.0|0.0|...|30.7|36.791|1.7|61.49|0.571|16320539.0|NaN|NaN|NaN|NaN
+377006|ZWE|Africa|Zimbabwe|2024-02-04|266265.0|0.0|0.000|5737.0|0.0|0.0|...|30.7|36.791|1.7|61.49|0.571|16320539.0|NaN|NaN|NaN|NaN
 
 #### Fase 2: Si richiede di verificare le dimensioni del dataset e le diciture presenti nell'intestazione
 
@@ -156,7 +169,7 @@ df_covid = df_covid.loc[:, [
 
 df_covid
 ```
-null | iso_code | continent | location | date | total_cases | total_vaccinations|
+#| iso_code | continent | location | date | total_cases | total_vaccinations|
 -----------|-----------------|------|-----------------|------|----------------|--------------------|
 0|AFG|Asia|Afghanistan|2020-01-05|NaN|NaN
 0|AFG|Asia|Afghanistan|2020-01-06|NaN|NaN
