@@ -8,8 +8,6 @@ Il committente richiede di avere un report su casi e vaccinazioni in diverse are
 ```python
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
-import humanize
 
 current_work_directory = os.getcwd()
 covid_filepath = os.path.join(current_work_directory,
@@ -208,6 +206,8 @@ South America|68752780.0
 #### Fase 4: Sempre riguardo i casi di COVID totali, si chiede di sviluppare una funzione che prenda in input il dataset e due nomi di continenti, e che ne confronti i seguenti relativi descrittori statistici: valori minimo e massimo, media, e percentuale rispetto al numero dei casi totali nel mondo (calcolati anche sulle locazioni senza indicazione di continente)
 
 ```python
+import humanize
+
 def confronto_casi_continenti(dataset):
     # passaggio 1 : filtra i due dataset per i continenti selezionati, generando due nuovi dataset
     continente1 = input("Qual è il primo continente che vuoi confrontare?: ").capitalize()
@@ -275,6 +275,8 @@ North America|1,403.0|Montserrat|103,436,829.0|United States|3,037,218.8|16.08
 #### Fase 5: Si chiede poi di effettuare lo stesso tipo di analisi – anche in questo caso sviluppando una funzione ad hoc – per il numero di vaccinazioni totali per ogni continente
 
 ```python
+import humanize
+
 def confronto_vac_continenti(dataset):
     # passaggio 1 : filtra i due dataset per i continenti selezionati, generando due nuovi dataset
     continente1 = input("Qual è il primo continente che vuoi confrontare?: ").capitalize()
