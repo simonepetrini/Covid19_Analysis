@@ -53,8 +53,19 @@ df_covid = df_covid.loc[:, [
 
 df_covid
 ```
-
-![alt text](https://github.com/simonepetrini/Covid19_Analysis/blob/img/Covid5.png?raw=True)
+null | iso_code | continent | location | date | total_cases | total_vaccinations|
+-----------|-----------------|------|-----------------|------|----------------|--------------------|
+0|AFG|Asia|Afghanistan|2020-01-05|NaN|NaN
+0|AFG|Asia|Afghanistan|2020-01-06|NaN|NaN
+0|AFG|Asia|Afghanistan|2020-01-07|NaN|NaN
+0|AFG|Asia|Afghanistan|2020-01-08|NaN|NaN
+0|AFG|Asia|Afghanistan|2020-01-09|NaN|NaN
+...|...|...|...|...|...|...
+377002|ZWE|Africa|Zimbabwe|2024-01-31|266265.0|NaN
+377002|ZWE|Africa|Zimbabwe|2024-02-01|266265.0|NaN
+377002|ZWE|Africa|Zimbabwe|2024-02-02|266265.0|NaN
+377002|ZWE|Africa|Zimbabwe|2024-02-03|266265.0|NaN
+377002|ZWE|Africa|Zimbabwe|2024-02-04|266265.0|NaN
 
 #### Fase 3: Si chiede poi per ogni continente di trovare il numero di casi totali, escludendo eventuali locazioni che nel dataset non appartengono ad alcun continente
 
@@ -69,8 +80,14 @@ df_casi_totali = pd.DataFrame(casi_totali)
 df_casi_totali = df_casi_totali.rename(columns = {"new_cases":"total_cases"} )
 df_casi_totali
 ```
-
-![alt text](https://github.com/simonepetrini/Covid19_Analysis/blob/img/Covid6.png?raw=True)
+Continent | total_cases |
+-----------|-----------------|
+Africa|13136517.0
+Asia|301391174.0
+Europe|252013370.0
+North America|124526003.0
+Oceania|14741735.0
+South America|68752780.0
 
 #### Fase 4: Sempre riguardo i casi di COVID totali, si chiede di sviluppare una funzione che prenda in input il dataset e due nomi di continenti, e che ne confronti i seguenti relativi descrittori statistici: valori minimo e massimo, media, e percentuale rispetto al numero dei casi totali nel mondo (calcolati anche sulle locazioni senza indicazione di continente)
 
@@ -131,6 +148,7 @@ def confronto_casi_continenti(dataset):
 Ecco un esempio del funzionamento della funzione:
 
 Qual è il primo continente che vuoi confrontare?:  Oceania
+
 Qual è il secondo continente che vuoi confrontare?:  North America
 
 Continente | Valore minimo di casi totali | Stato col valore minimo di casi totali | Valore massimo di casi totali | Stato col valore massimo di casi totali | Media di casi totali | Percentuale dei casi totali rispetto al totale mondiale |
@@ -197,6 +215,7 @@ def confronto_vac_continenti(dataset):
 Ecco un esempio del funzionamento della funzione:
 
 Qual è il primo continente che vuoi confrontare?:  Europe
+
 Qual è il secondo continente che vuoi confrontare?:  South America
 
 Continente | Valore minimo di vaccinazioni | Stato col valore minimo di vaccinazioni | Valore massimo di vaccinazioni | Stato col valore massimo di vaccinazioni | Media di vaccinazioni | Percentuale delle vaccinazioni rispetto al totale mondiale |
