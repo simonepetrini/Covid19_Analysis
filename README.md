@@ -263,9 +263,9 @@ def confronto_casi_continenti(dataset):
 ```
 Ecco un esempio del funzionamento della funzione:
 
-Qual è il primo continente che vuoi confrontare?:  Oceania
+**Qual è il primo continente che vuoi confrontare?:**  Oceania
 
-Qual è il secondo continente che vuoi confrontare?:  North America
+**Qual è il secondo continente che vuoi confrontare?:**  North America
 
 Continente | Valore minimo di casi totali | Stato col valore minimo di casi totali | Valore massimo di casi totali | Stato col valore massimo di casi totali | Media di casi totali | Percentuale dei casi totali rispetto al totale mondiale |
 -----------|-----------------|------|-----------------|------|----------------|--------------------|
@@ -330,9 +330,9 @@ def confronto_vac_continenti(dataset):
 
 Ecco un esempio del funzionamento della funzione:
 
-Qual è il primo continente che vuoi confrontare?:  Europe
+**Qual è il primo continente che vuoi confrontare?:**  Europe
 
-Qual è il secondo continente che vuoi confrontare?:  South America
+**Qual è il secondo continente che vuoi confrontare?:**  South America
 
 Continente | Valore minimo di vaccinazioni | Stato col valore minimo di vaccinazioni | Valore massimo di vaccinazioni | Stato col valore massimo di vaccinazioni | Media di vaccinazioni | Percentuale delle vaccinazioni rispetto al totale mondiale |
 -----------|-----------------|------|-----------------|------|----------------|--------------------|
