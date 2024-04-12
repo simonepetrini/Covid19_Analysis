@@ -28,8 +28,83 @@ Effettuo una prima analisi esplorativa con .info(); Aggiungendo il parametro mem
 ```python
 df_covid.info(memory_usage="deep")
 ```
-![alt text](https://github.com/simonepetrini/Covid19_Analysis/blob/img/Covid2.png?raw=True)
-![alt text](https://github.com/simonepetrini/Covid19_Analysis/blob/img/Covid3.png?raw=True)
+
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 377007 entries, 0 to 377006
+Data columns (total 67 columns):
+ #   Column                                      Non-Null Count   Dtype  
+---  ------                                      --------------   -----  
+ 0   iso_code                                    377007 non-null  object 
+ 1   continent                                   358941 non-null  object 
+ 2   location                                    377007 non-null  object 
+ 3   date                                        377007 non-null  object 
+ 4   total_cases                                 338085 non-null  float64
+ 5   new_cases                                   366116 non-null  float64
+ 6   new_cases_smoothed                          364886 non-null  float64
+ 7   total_deaths                                316113 non-null  float64
+ 8   new_deaths                                  366124 non-null  float64
+ 9   new_deaths_smoothed                         364894 non-null  float64
+ 10  total_cases_per_million                     338085 non-null  float64
+ 11  new_cases_per_million                       366116 non-null  float64
+ 12  new_cases_smoothed_per_million              364886 non-null  float64
+ 13  total_deaths_per_million                    316113 non-null  float64
+ 14  new_deaths_per_million                      366124 non-null  float64
+ 15  new_deaths_smoothed_per_million             364894 non-null  float64
+ 16  reproduction_rate                           184817 non-null  float64
+ 17  icu_patients                                38433 non-null   float64
+ 18  icu_patients_per_million                    38433 non-null   float64
+ 19  hosp_patients                               39932 non-null   float64
+ 20  hosp_patients_per_million                   39932 non-null   float64
+ 21  weekly_icu_admissions                       10588 non-null   float64
+ 22  weekly_icu_admissions_per_million           10588 non-null   float64
+ 23  weekly_hosp_admissions                      23976 non-null   float64
+ 24  weekly_hosp_admissions_per_million          23976 non-null   float64
+ 25  total_tests                                 79387 non-null   float64
+ 26  new_tests                                   75403 non-null   float64
+ 27  total_tests_per_thousand                    79387 non-null   float64
+ 28  new_tests_per_thousand                      75403 non-null   float64
+ 29  new_tests_smoothed                          103965 non-null  float64
+ 30  new_tests_smoothed_per_thousand             103965 non-null  float64
+ 31  positive_rate                               95927 non-null   float64
+ 32  tests_per_case                              94348 non-null   float64
+ 33  tests_units                                 106788 non-null  object 
+ 34  total_vaccinations                          82679 non-null   float64
+ 35  people_vaccinated                           78631 non-null   float64
+ 36  people_fully_vaccinated                     75487 non-null   float64
+ 37  total_boosters                              50775 non-null   float64
+ 38  new_vaccinations                            68479 non-null   float64
+ 39  new_vaccinations_smoothed                   189150 non-null  float64
+ 40  total_vaccinations_per_hundred              82679 non-null   float64
+ 41  people_vaccinated_per_hundred               78631 non-null   float64
+ 42  people_fully_vaccinated_per_hundred         75487 non-null   float64
+ 43  total_boosters_per_hundred                  50775 non-null   float64
+ 44  new_vaccinations_smoothed_per_million       189150 non-null  float64
+ 45  new_people_vaccinated_smoothed              186642 non-null  float64
+ 46  new_people_vaccinated_smoothed_per_hundred  186642 non-null  float64
+ 47  stringency_index                            197292 non-null  float64
+ 48  population_density                          320354 non-null  float64
+ 49  median_age                                  297831 non-null  float64
+ 50  aged_65_older                               287530 non-null  float64
+ 51  aged_70_older                               294847 non-null  float64
+ 52  gdp_per_capita                              292006 non-null  float64
+ 53  extreme_poverty                             188233 non-null  float64
+ 54  cardiovasc_death_rate                       292577 non-null  float64
+ 55  diabetes_prevalence                         307623 non-null  float64
+ 56  female_smokers                              219613 non-null  float64
+ 57  male_smokers                                216629 non-null  float64
+ 58  handwashing_facilities                      143293 non-null  float64
+ 59  hospital_beds_per_thousand                  258405 non-null  float64
+ 60  life_expectancy                             347067 non-null  float64
+ 61  human_development_index                     283747 non-null  float64
+ 62  population                                  377007 non-null  float64
+ 63  excess_mortality_cumulative_absolute        13042 non-null   float64
+ 64  excess_mortality_cumulative                 13042 non-null   float64
+ 65  excess_mortality                            13042 non-null   float64
+ 66  excess_mortality_cumulative_per_million     13042 non-null   float64
+dtypes: float64(62), object(5)
+memory usage: 286.1 MB
+```
 
 Verifico l'elenco totale delle colonne del dataset con il loro rispettivo nome
 
@@ -37,8 +112,36 @@ Verifico l'elenco totale delle colonne del dataset con il loro rispettivo nome
 df_covid.columns
 ```
 
-![alt text](https://github.com/simonepetrini/Covid19_Analysis/blob/img/Covid4.png?raw=True)
-
+```
+Index(['iso_code', 'continent', 'location', 'date', 'total_cases', 'new_cases',
+'new_cases_smoothed', 'total_deaths', 'new_deaths',
+'new_deaths_smoothed', 'total_cases_per_million',
+'new_cases_per_million', 'new_cases_smoothed_per_million',
+'total_deaths_per_million', 'new_deaths_per_million',
+'new_deaths_smoothed_per_million', 'reproduction_rate', 'icu_patients',
+'icu_patients_per_million', 'hosp_patients',
+'hosp_patients_per_million', 'weekly_icu_admissions',
+'weekly_icu_admissions_per_million', 'weekly_hosp_admissions',
+'weekly_hosp_admissions_per_million', 'total_tests', 'new_tests',
+'total_tests_per_thousand', 'new_tests_per_thousand',
+'new_tests_smoothed', 'new_tests_smoothed_per_thousand',
+'positive_rate', 'tests_per_case', 'tests_units', 'total_vaccinations',
+'people_vaccinated', 'people_fully_vaccinated', 'total_boosters',
+'new_vaccinations', 'new_vaccinations_smoothed',
+'total_vaccinations_per_hundred', 'people_vaccinated_per_hundred',
+'people_fully_vaccinated_per_hundred', 'total_boosters_per_hundred',
+'new_vaccinations_smoothed_per_million',
+'new_people_vaccinated_smoothed',
+'new_people_vaccinated_smoothed_per_hundred', 'stringency_index',
+'population_density', 'median_age', 'aged_65_older', 'aged_70_older',
+'gdp_per_capita', 'extreme_poverty', 'cardiovasc_death_rate',
+'diabetes_prevalence', 'female_smokers', 'male_smokers',
+'handwashing_facilities', 'hospital_beds_per_thousand',
+'life_expectancy', 'human_development_index', 'population',
+'excess_mortality_cumulative_absolute', 'excess_mortality_cumulative',
+'excess_mortality', 'excess_mortality_cumulative_per_million'],
+dtype='object')
+```
 Si tratta di un dataset di notevoli dimensioni, soprattutto per quanto riguarda il numero dei fattori analizzabili. Per ottimizzare i processi, mantengo solo le colonne strettamente necessarie all'analisi richiesta
 
 ```python
